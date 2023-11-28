@@ -40,3 +40,7 @@ def test_first_row_is_correct():
     output = read_csv(filename)
     # Assert
     assert output[0] == expected_output
+
+def test_no_duplicates():
+    #Arrange
+    

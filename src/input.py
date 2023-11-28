@@ -7,3 +7,6 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+# add error checking
