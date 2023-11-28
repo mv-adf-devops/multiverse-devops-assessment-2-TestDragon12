@@ -32,8 +32,29 @@ def read_csv_nb_CAP(filename):
 
     i = 0
     while i < len(rows):
-        rows[i][1] = rows[i][1].upper()
-        rows[i][2] = rows[i][2].upper()
+        rows[i][1] = rows[i][1].capitalize()
+        rows[i][2] = rows[i][2].capitalize()
         i += 1
     return rows
 
+def read_csv_nb_CAP_val(filename):
+    rows = []
+    empty_rows= 0
+    with open(filename, 'r') as f:
+        for line in f.readlines():
+            if line.strip() == ',,,,,':
+                empty_rows += 1
+            else:
+                rows.append(line.strip().split(','))
+    print('there are ' + str(empty_rows) + ' empty answers in the survey') 
+
+    i = 0
+    while i < len(rows):
+        rows[i][1] = rows[i][1].capitalize()
+        rows[i][2] = rows[i][2].capitalize()
+        i += 1
+
+
+    return rows
+
+    
