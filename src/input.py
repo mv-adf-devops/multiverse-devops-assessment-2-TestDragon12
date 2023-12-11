@@ -7,10 +7,9 @@ def main():
     #ticket 1: read CSV file
     filename = "results.csv"
     output = read_csv_nb_CAP_val(filename)
-    
-
-
     no_dupl = remove_duplicates(output)
+
+   
     
     val_sur = validate_ans_3(no_dupl)
 

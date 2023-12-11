@@ -70,12 +70,59 @@ def test_no_duplicates():
     #Arrange
     filename = "results.csv"
     output = read_csv_nb_CAP_val(filename)
-     
-
+   
     # Act
     no_dupl = remove_duplicates(output)
-    print(type(no_dupl))
-    
+    U_ID =[]
+    for x in no_dupl:
+        U_ID.append(x[0])
+    print(U_ID)
 
     # Assert
-    assert len(no_dupl) == len(set(no_dupl))
+    assert len(U_ID) == len(set(U_ID))
+
+## Ticket 5: TValidate the responses to answer 3
+def test_validate_ans3():
+    #Arrange
+    filename = "results.csv"
+    # Act
+    output = read_csv_nb_CAP_val(filename)
+    no_dupl = remove_duplicates(output)
+    val_sur = validate_ans_3(no_dupl)
+    
+    #Assert
+    for x in val_sur:
+        if x[5] == 'answer_3':
+            assert 1 == 1
+        else:
+            assert int(x[5]) > 0 and int(x[5]) <  11
+   
+   
+    ## Ticket 6: Output the cleansed result data to a new file
+
+
+def test_cleaned_results_file():
+    #Arrange
+    output_filename = "clean_results.csv"
+    filename = "results.csv"
+    
+    # Act
+    
+    output = read_csv_nb_CAP_val(filename)
+    no_dupl = remove_duplicates(output)
+    val_sur = validate_ans_3(no_dupl)
+
+    # Arrange 
+    
+    
+    read_csv(output_filename) ==  val_sur
+
+## Ticket 7: Create an output script
+
+
+def test_create_output_script():
+    #Arrange
+    output_filename = "clean_results.csv"
+    filename = "results.csv"
+    
+    # Act
