@@ -32,4 +32,4 @@ jobs:
       with:
         add: '*.tfstate*'
         cwd: './terraform-iac'
-        message: 'Adding the up-to-date Terraform state file'
+        message: 'Adding the up-to-date Terraform state file 2'
