@@ -23,6 +23,3 @@ on:
     - name: Run Pytest
       run: pytest
       working-directory: .
-	  
-
-	  
