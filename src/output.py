@@ -12,7 +12,7 @@ output_clean = read_csv(filename_clean)
 
 
 def space(i, d):
-  max_len = len(max(list(zip(*output_clean ))[i], key=len))
+  max_len = len(max(list(zip(*output_clean))[i], key=len))
   return d+' '*(max_len-len(d))
 
 clean_FL = '\n'.join(' '.join(space(*c) for c in enumerate(b)) for b in output_clean)

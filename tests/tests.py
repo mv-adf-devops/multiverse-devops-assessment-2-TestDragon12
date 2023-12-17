@@ -105,6 +105,7 @@ def test_cleaned_results_file():
     #Arrange
     output_filename = "clean_results.csv"
     filename = "results.csv"
+    first_line = ["user_id","first_name","last_name","answer_1","answer_2","answer_3"]
     
     # Act
     
@@ -112,7 +113,7 @@ def test_cleaned_results_file():
     no_dupl = remove_duplicates(output)
     val_sur = validate_ans_3(no_dupl)
 
-    # Arrange 
+    # Assert
     
     
     read_csv(output_filename) ==  val_sur
@@ -123,6 +124,11 @@ def test_cleaned_results_file():
 def test_create_output_script():
     #Arrange
     output_filename = "clean_results.csv"
-    filename = "results.csv"
+    header = "user_id,First_name,Last_name,answer_1,answer_2,answer_3"
     
     # Act
+    with open('clean_results.csv') as f:
+        first_line = f.readline()
+
+     # Assert
+    assert first_line.strip() == header
