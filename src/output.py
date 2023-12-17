@@ -10,7 +10,7 @@ from extract import read_csv
 filename_clean = "clean_results.csv"
 output_clean = read_csv(filename_clean)
 
-
+#this works if the clean_results.csv is correct. Unfortunately this contains an extra comma that I need to debug
 def space(i, d):
   max_len = len(max(list(zip(*output_clean))[i], key=len))
   return d+' '*(max_len-len(d))

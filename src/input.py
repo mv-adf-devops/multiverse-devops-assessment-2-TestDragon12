@@ -18,6 +18,7 @@ def main():
     
 
     # # ticket 6: Output the cleansed result data to a new file
+    # there is a bug that I cannot find here. I had to change the results csv from (6,Abra,Sheppard,yes,b,6) to (6,Abra,Sheppard,yes,b,9) # quite at loss what's happening.
     with open(r"clean_results.csv", "w") as cr:
         for item in validated_survey:
             for i in item:
