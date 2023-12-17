@@ -23,8 +23,8 @@ def main():
                     
                 else:
                     cr.write("%s" % i)  
-            if validated_survey.index(item) < (len(validated_survey)-1):
-                cr.write("\n")
+            #if validated_survey.index(item) < (len(validated_survey)-1):
+            cr.write("\n")
         
 
 
