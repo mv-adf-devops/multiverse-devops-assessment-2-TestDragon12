@@ -14,20 +14,13 @@ def main():
 
     # validates answers of question 3    
     validated_survey = validate_ans_3(no_dupl)
- 
     
 
     # # ticket 6: Output the cleansed result data to a new file
     # there is a bug that I cannot find here. I had to change the results csv from (6,Abra,Sheppard,yes,b,6) to (6,Abra,Sheppard,yes,b,9) # quite at loss what's happening.
-    with open(r"clean_results.csv", "w") as cr:
-        for item in validated_survey:
-            for i in item:
-                if item.index(i) < (len(item) - 1):
-                    cr.write("%s," % i)
-                else:
-                    cr.write("%s" % i)  
-            if validated_survey.index(item) < (len(validated_survey)-1):
-                cr.write("\n")
+    with open("clean_results.csv", "w") as cr:
+        for row in validated_survey:
+            cr.write(','.join(row) + '\n')
     cr.close()
 
 
